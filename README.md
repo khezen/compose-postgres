@@ -6,7 +6,7 @@
 
 ## steps
 1. `git clone https://github.com/Khezen/docker-postgres.git`
-2. `cd docker-postgres.git`
+2. `cd docker-postgres`
 3. `docker-compose up`
 
 ## result
@@ -14,4 +14,3 @@
   * user: `postgres`
   * password: `changeme`
 * pgadmin4 running on 5050
-
