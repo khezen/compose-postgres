@@ -2,7 +2,7 @@
 * [docker](https://docs.docker.com/engine/installation/) installed
 * [docker-compose](https://docs.docker.com/compose/install/) installed
 
-# Setup
+# setup
 
 ## steps
 1. `git clone https://github.com/Khezen/docker-postgres.git`
