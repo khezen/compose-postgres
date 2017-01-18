@@ -1,13 +1,14 @@
 version: '2'
 
 services:
-
   postgres:
     image: postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: changeme
       PGDATA: /data/postgres
+    volumes:
+      - /data/postgres:/data/postgres
     ports:
       - "5432:5432"
     networks:
@@ -23,7 +24,6 @@ services:
     networks:
       - postgres
     restart: unless-stopped
-
 
 networks:
   postgres:
