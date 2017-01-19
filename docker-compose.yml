@@ -7,8 +7,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: changeme
       PGDATA: /data/postgres
-    # volumes:
-    #   - /data/postgres:/data/postgres
+     volumes:
+       - /data/postgres:/data/postgres
     ports:
       - "5432:5432"
     networks:
@@ -19,6 +19,8 @@ services:
     links:
       - postgres:postgres
     image: fenglc/pgadmin4
+    volumes:
+       - /data/pgadmin:/root/.pgadmin
     ports:
       - "5050:5050"
     networks:
