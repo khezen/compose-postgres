@@ -5,8 +5,8 @@
 # setup
 
 ## steps
-1. `git clone https://github.com/Khezen/docker-postgres.git`
-2. `cd docker-postgres`
+1. `git clone https://github.com/Khezen/compose-postgres.git`
+2. `cd compose-postgres`
 3. `docker-compose up`
 
 ## result
