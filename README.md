@@ -14,3 +14,5 @@
   * user: `postgres`
   * password: `changeme`
 * pgadmin4 running on 5050
+  * user: `pgadmin4@pgadmin.org`
+  * password: `admin`
