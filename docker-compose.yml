@@ -2,30 +2,30 @@ version: '2'
 
 services:
   postgres:
-    image: postgres
+    image: postgres:11
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: changeme
+      POSTGRES_PASSWORD: toor
       PGDATA: /data/postgres
     volumes:
-       - /data/postgres:/data/postgres
+    - /data/postgres:/data/postgres
     ports:
-      - "5432:5432"
+    - "5432:5432"
     networks:
-      - postgres
-    restart: unless-stopped
-  
+    - postgres
+    restart: always
+
   pgadmin:
     links:
-      - postgres:postgres
+    - postgres
     image: fenglc/pgadmin4
     volumes:
-       - /data/pgadmin:/root/.pgadmin
+    - /data/pgadmin:/root/.pgadmin
     ports:
-      - "5050:5050"
+    - "5050:5050"
     networks:
-      - postgres
-    restart: unless-stopped
+    - postgres
+    restart: always
 
 networks:
   postgres:

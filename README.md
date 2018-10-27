@@ -1,16 +1,21 @@
-# requirements:
-* [docker](https://docs.docker.com/engine/installation/) installed
+# Requirements:
+* [docker](https://docs.docker.com/install//) installed
 * [docker-compose](https://docs.docker.com/compose/install/) installed
 
-# setup
+## Steps
+1. `docker-compose up`
+2. Log in to pgAdmin panel [localhost:5050](http://localhost:5050/)
+2. Create server
 
-## steps
-1. `git clone https://github.com/Khezen/compose-postgres.git`
-2. `cd compose-postgres`
-3. `docker-compose up`
+![Create server](doc/connection.PNG?raw=true)
 
-## result
-* postgres running on 5432
-  * user: `postgres`
-  * password: `changeme`
-* pgadmin4 running on 5050
+## Additional info
+**Postgres credentials are in docker-compose.yml**
+* POSTGRES_USER: postgres
+* POSTGRES_PASSWORD: toor
+
+
+
+**pgAdmin credentials:**
+* Email Address: pgadmin4@pgadmin.org
+* Password: admin
