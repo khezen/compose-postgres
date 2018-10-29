@@ -18,7 +18,7 @@ services:
   pgadmin:
     links:
     - postgres
-    image: fenglc/pgadmin4
+    image: fenglc/pgadmin4:2-python3.6-jessie
     volumes:
     - /data/pgadmin:/root/.pgadmin
     ports:
