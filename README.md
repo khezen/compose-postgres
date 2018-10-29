@@ -9,6 +9,8 @@
 
 ![Create server](doc/connection.PNG?raw=true)
 
+(Host is taken from docker-compose.yml postgres service name)
+
 ## Additional info
 **Postgres credentials are in docker-compose.yml**
 * POSTGRES_USER: postgres
