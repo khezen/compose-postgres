@@ -1,14 +1,15 @@
-version: '2'
+version: '3.5'
 
 services:
   postgres:
+    container_name: postgres_container
     image: postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: changeme
       PGDATA: /data/postgres
     volumes:
-       - /data/postgres:/data/postgres
+       - postgres:/data/postgres
     ports:
       - "5432:5432"
     networks:
@@ -16,11 +17,10 @@ services:
     restart: unless-stopped
   
   pgadmin:
-    links:
-      - postgres:postgres
+    container_name: pgadmin_container
     image: fenglc/pgadmin4
     volumes:
-       - /data/pgadmin:/root/.pgadmin
+       - pgadmin:/root/.pgadmin
     ports:
       - "5050:5050"
     networks:
@@ -30,3 +30,7 @@ services:
 networks:
   postgres:
     driver: bridge
+
+volumes:
+    postgres:
+    pgadmin:
