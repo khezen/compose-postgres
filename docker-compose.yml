@@ -1,14 +1,15 @@
-version: '2'
+version: '3.5'
 
 services:
   postgres:
+    container_name: postgres_container
     image: postgres
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: changeme
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
       PGDATA: /data/postgres
     volumes:
-       - /data/postgres:/data/postgres
+       - postgres:/data/postgres
     ports:
       - "5432:5432"
     networks:
@@ -16,13 +17,15 @@ services:
     restart: unless-stopped
   
   pgadmin:
-    links:
-      - postgres:postgres
-    image: fenglc/pgadmin4
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
     volumes:
-       - /data/pgadmin:/root/.pgadmin
+       - pgadmin:/root/.pgadmin
     ports:
-      - "5050:5050"
+      - "${PGADMIN_PORT:-5050}:80"
     networks:
       - postgres
     restart: unless-stopped
@@ -30,3 +33,7 @@ services:
 networks:
   postgres:
     driver: bridge
+
+volumes:
+    postgres:
+    pgadmin:
