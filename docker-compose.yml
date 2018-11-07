@@ -5,8 +5,8 @@ services:
     container_name: postgres_container
     image: postgres
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: changeme
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
       PGDATA: /data/postgres
     volumes:
        - postgres:/data/postgres
@@ -18,11 +18,14 @@ services:
   
   pgadmin:
     container_name: pgadmin_container
-    image: fenglc/pgadmin4
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
     volumes:
        - pgadmin:/root/.pgadmin
     ports:
-      - "5050:5050"
+      - "${PGADMIN_PORT:-5060}:80"
     networks:
       - postgres
     restart: unless-stopped
