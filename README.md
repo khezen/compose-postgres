@@ -49,3 +49,7 @@
 ## Removing the volums
 
 docker volume rm servicedictionarypostgrescompose_postgres servicedictionarypostgrescompose_pgadmin
+
+## Common issues
+
+- If you have network bridge issues make sure you're proxy is off. Or try the `docker network prune`
