@@ -1,13 +1,14 @@
 create table sources(
 	 				id SERIAL PRIMARY KEY,
                     name varchar NOT NULL, 
-                    source_uuid uuid, 
                     description text, 
-                    is_deleted bool,
+                    source_type varchar(50),
+                    endpoint varchar(200),
+                    is_deleted bool default(false),
+                    is_active bool default(true),
                     created timestamp without time zone default (now() at time zone 'utc')
                     );
 
-alter table public.sources alter column is_deleted set default false;
 
 INSERT INTO public.sources(
 	name, source_uuid, description)
