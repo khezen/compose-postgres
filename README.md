@@ -8,8 +8,11 @@
 ## Quick Start
 
 - Clone or download this repository
-- Go inside of directory, `cd service-dictionary-compose-postgres`
-- Run this command `docker-compose up -d`
+
+```bash
+cd service-dictionary-compose-postgres
+docker-compose up -d
+```
 
 ## Seed Data
 
@@ -40,16 +43,26 @@
 
 ## Stopping the containers
 
-''' docker stop postgres_container pgadmin_container '''
+```bash
+docker stop postgres_container pgadmin_container
+```
 
 ## Removing the containers
 
-''' docker rm pgadmin_container postgres_container '''
+```bash
+docker rm pgadmin_container postgres_container
+```
 
 ## Removing the volums
 
+```bash
 docker volume rm servicedictionarypostgrescompose_postgres servicedictionarypostgrescompose_pgadmin
+```
 
 ## Common issues
 
-- If you have network bridge issues make sure you're proxy is off. Or try the `docker network prune`
+- If you have network bridge issues make sure you're proxy is off. Or try the
+
+```bash
+docker network prune
+```
