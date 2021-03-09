@@ -24,7 +24,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
     volumes:
        - pgadmin:/root/.pgadmin
-       - ./pg_storage:/var/lib/pgadmin/storage
+       - pg_storage:/var/lib/pgadmin/storage
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     networks:
