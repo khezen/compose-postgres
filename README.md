@@ -8,7 +8,7 @@
 ## Quick Start
 * Clone or download this repository
 * Go inside of directory,  `cd compose-postgres`
-* Run this command `docker-compose up -d`
+* Run this command `docker-compose up -d && sudo chown -R 5050:5050 pgadmin`
 
 
 ## Environments
