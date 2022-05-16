@@ -47,4 +47,4 @@ logging:
   driver: "none"
 ```
 
-[reference](https://github.com/khezen/compose-postgres/pull/23/files):
+[reference](https://github.com/khezen/compose-postgres/pull/23/files)
