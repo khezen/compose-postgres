@@ -37,11 +37,14 @@ This Compose file contains the following environment variables:
 * **Password** as `POSTGRES_PASSWORD`, by default `changeme`
 
 ## Logging
-pgAdmin logs can be quite verbose and there's no application setting to control them but we can disable them at a docker level if they bother you.
 
-Add the following to the `pgadmin` service in the `docker-compose.yml` so it looks like [this](https://github.com/khezen/compose-postgres/pull/23/files):
+There are no easy way to configure pgadmin log verbosity and it can be overwhelming at times. It is possible to disable pgadmin logging on the container level.
+
+Add the following to `pgadmin` service in the `docker-compose.yml`:
 
 ```
 logging:
   driver: "none"
 ```
+
+[reference](https://github.com/khezen/compose-postgres/pull/23/files):
